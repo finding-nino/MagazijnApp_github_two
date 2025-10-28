@@ -7,6 +7,7 @@ public partial class App : Application
 		InitializeComponent();
 		Routing.RegisterRoute("inventory", typeof(InventoryPage));
 		Routing.RegisterRoute("products", typeof(ProductsPage));
+		Routing.RegisterRoute("login", typeof(LoginPage));
 	}
 
 	protected override Window CreateWindow(IActivationState? activationState)

@@ -38,6 +38,11 @@
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 Clicked="OnProductsClicked"></Button>
+            <Button
+                x:Name="LoginBtn"
+                Text="Go to Login"
+                WidthRequest="200"
+                Clicked="OnLoginClicked"></Button>
 
 
         </VerticalStackLayout>
