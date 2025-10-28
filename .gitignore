@@ -1,0 +1,43 @@
+# =========================
+# .NET MAUI Git Ignore
+# Safe for Mac + Windows
+# =========================
+
+# Build artifacts
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# MAUI platform outputs
+*.app/
+*.ipa
+*.apk
+.platforms/
+# Generated code
+**/Microsoft.Maui.Controls.SourceGen/
+**/*.g.cs
+**/*.g.i.cs
+
+# User settings
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+# macOS-specific
+.DS_Store
+*.dylib
+
+# Windows-specific
+Thumbs.db
+desktop.ini
+
+# Databases or local data
+*.db
+*.sqlite

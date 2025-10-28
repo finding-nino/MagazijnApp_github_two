@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagazijnApp.Views.InventoryPage">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center"
+            Padding="20" Margin="20">
+
+            <Label
+                Text="Add Products"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                Margin="20" />
+
+            <Entry x:Name="ProductNameEntry"
+                Placeholder="Product Name"
+                WidthRequest="200"></Entry>
+
+            <Entry x:Name="QuantityEntry"
+                Placeholder="Quantity"
+                WidthRequest="200"></Entry>
+
+            <Entry x:Name="LocationEntry"
+                Placeholder="Location"
+                WidthRequest="200"></Entry>
+
+            <Button
+                x:Name="AddProductButton"
+                Text="Add Product"
+                Margin="25"
+                WidthRequest="200"
+                Clicked="OnAddProductClicked"></Button>
+            <Button
+                x:Name="ProductsBtn"
+                Text="Go to Products"
+                WidthRequest="200"
+                Clicked="OnProductsClicked"></Button>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

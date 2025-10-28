@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagazijnApp.Views.ProductsPage">
+    
+    <CollectionView x:Name="ProductsCollection">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="3" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="10" HeightRequest="150">
+                    <Border Stroke="{AppThemeBinding Light=Black, Dark=White}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 10"
+                            Background="{AppThemeBinding Light=White, Dark=#2B2B2B}">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="5,5"
+                                    Opacity="0.2"
+                                    Radius="10" />
+                        </Border.Shadow>
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding ProductName}" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   VerticalOptions="Start" />
+                            <Label Text="{Binding Quantity}" 
+                                   FontSize="14" 
+                                   VerticalOptions="Start" />
+                            <Label Text="{Binding Location}" 
+                                   FontSize="14" 
+                                   VerticalOptions="Start" />
+                            <Grid ColumnDefinitions="*,*" 
+                                  ColumnSpacing="5"
+                                  VerticalOptions="End">
+                                <Button Text="Edit"
+                                        Clicked="OnEditClicked"
+                                        Grid.Column="0" />
+                                <Button Text="Delete"
+                                        Clicked="OnDeleteClicked"
+                                        Grid.Column="1" />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
