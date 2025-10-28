@@ -4,7 +4,7 @@
              x:Class="MagazijnApp.Views.LoginPage">
 
     <ScrollView>
-        <VerticalStackLayout
+        <VerticalStackLayout BackgroundColor="#004A4F"
             Padding="30,0"
             Spacing="25">
             <Image
