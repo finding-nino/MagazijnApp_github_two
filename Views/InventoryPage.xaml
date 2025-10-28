@@ -4,8 +4,8 @@
              x:Class="MagazijnApp.Views.InventoryPage">
 
     <ScrollView>
-        <VerticalStackLayout VerticalOptions="Center"
-            Padding="20" Margin="20">
+        <VerticalStackLayout BackgroundColor="#004A4F" 
+        ><!-- Padding="20" Margin="20" -->
 
             <Label
                 Text="Add Products"
@@ -19,21 +19,28 @@
 
             <Entry x:Name="QuantityEntry"
                 Placeholder="Quantity"
+                BackgroundColor="#E46E56""Transparent"
                 WidthRequest="200"></Entry>
 
             <Entry x:Name="LocationEntry"
                 Placeholder="Location"
-                WidthRequest="200"></Entry>
+
+                WidthRequest="200">
+                </Entry>
 
             <Button
                 x:Name="AddProductButton"
                 Text="Add Product"
+                TextColor="White"
+                BackgroundColor="#E46E56"
                 Margin="25"
                 WidthRequest="200"
                 Clicked="OnAddProductClicked"></Button>
             <Button
                 x:Name="ProductsBtn"
                 Text="Go to Products"
+                TextColor="White"
+                BackgroundColor="#E46E56"
                 WidthRequest="200"
                 Clicked="OnProductsClicked"></Button>
         </VerticalStackLayout>

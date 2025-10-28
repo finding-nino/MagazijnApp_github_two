@@ -4,9 +4,10 @@
              x:Class="MagazijnApp.Views.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+        <VerticalStackLayout BackgroundColor="#004A4F"
             Padding="30,0"
             Spacing="25">
+            
             <Image
                 Source="inventory_management.png"
                 HeightRequest="185"
@@ -21,12 +22,21 @@
             <Button
                 x:Name="InventoryBtn"
                 Text="Add Products"
+                TextColor="White"
                 WidthRequest="200"
+                HeightRequest="50"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                BackgroundColor="#E46E56"
                 Clicked="OnInventoryClicked"/>
             <Button
                 x:Name="ProductsBtn"
                 Text="Go to Products"
+                TextColor="White"
                 WidthRequest="200"
+                BackgroundColor="#E46E56"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
                 Clicked="OnProductsClicked"></Button>
 
 
