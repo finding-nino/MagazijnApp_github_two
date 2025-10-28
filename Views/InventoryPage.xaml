@@ -19,7 +19,7 @@
 
             <Entry x:Name="QuantityEntry"
                 Placeholder="Quantity"
-                BackgroundColor="#E46E56""Transparent"
+                BackgroundColor="#E46E56"
                 WidthRequest="200"></Entry>
 
             <Entry x:Name="LocationEntry"

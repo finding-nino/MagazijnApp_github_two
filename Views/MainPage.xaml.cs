@@ -20,9 +20,11 @@ public partial class MainPage : ContentPage
 		await Shell.Current.GoToAsync("products");
 	}
 	private async void OnLoginClicked(object? sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("login");
-    }
-	
+	{
+		await Shell.Current.GoToAsync("login");
+	}
+
 
 }
+
+//dotnet run --framework net9.0-windows10.0.19041.0
