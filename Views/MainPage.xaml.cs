@@ -15,9 +15,13 @@ public partial class MainPage : ContentPage
 		await Shell.Current.GoToAsync("inventory");
 	}
 	private async void OnProductsClicked(object? sender, EventArgs e)
+	{
+		// Navigate to ProductsPage to view all products
+		await Shell.Current.GoToAsync("products");
+	}
+	private async void OnLoginClicked(object? sender, EventArgs e)
     {
-        // Navigate to ProductsPage to view all products
-        await Shell.Current.GoToAsync("products");
+        await Shell.Current.GoToAsync("login");
     }
 	
 
