@@ -41,6 +41,8 @@
             <Button
                 x:Name="LoginBtn"
                 Text="Go to Login"
+                TextColor="White"
+                BackgroundColor="#E46E56"
                 WidthRequest="200"
                 Clicked="OnLoginClicked"></Button>
 

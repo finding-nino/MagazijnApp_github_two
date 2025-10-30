@@ -22,13 +22,16 @@
                         </Border.Shadow>
                         <VerticalStackLayout Padding="10" BackgroundColor="#E46E56">
                             <Label Text="{Binding ProductName}" 
+                                   TextColor="White"
                                    FontSize="16" 
                                    FontAttributes="Bold" 
                                    VerticalOptions="Start" />
                             <Label Text="{Binding Quantity}" 
+                                   TextColor="White"
                                    FontSize="14" 
                                    VerticalOptions="Start" />
                             <Label Text="{Binding Location}" 
+                                   TextColor="White"
                                    FontSize="14" 
                                    VerticalOptions="Start" />
                             <Grid ColumnDefinitions="*,*" 

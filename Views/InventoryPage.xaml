@@ -15,16 +15,20 @@
 
             <Entry x:Name="ProductNameEntry"
                 Placeholder="Product Name"
+                PlaceholderColor="White"
+                BackgroundColor="#E46E56"
                 WidthRequest="200"></Entry>
 
             <Entry x:Name="QuantityEntry"
                 Placeholder="Quantity"
+                PlaceholderColor="White"
                 BackgroundColor="#E46E56"
                 WidthRequest="200"></Entry>
 
             <Entry x:Name="LocationEntry"
                 Placeholder="Location"
-
+                PlaceholderColor="White"
+                BackgroundColor="#E46E56"
                 WidthRequest="200">
                 </Entry>
 
