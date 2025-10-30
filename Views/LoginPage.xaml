@@ -18,6 +18,35 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
+            <Entry
+                x:Name="UserNameEntry"
+                Placeholder="Username"
+                BackgroundColor="#E46E56"
+                WidthRequest="200">
+            </Entry>
+
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Password"
+                BackgroundColor="#E46E56"
+                WidthRequest="200">
+            </Entry>
+
+            <Button
+                x:Name="LoginButton"
+                Text="Log in"
+                BackgroundColor="#E46E56"
+                Clicked="OnLoginClicked"
+                WidthRequest="200"></Button>
+
+            <Button
+                x:Name="RegisterButton"
+                Text="Register"
+                BackgroundColor="#E46E56"
+                Clicked="OnRegisterClicked"
+                WidthRequest="200"></Button>
+
+            
 
         </VerticalStackLayout>
     </ScrollView>
