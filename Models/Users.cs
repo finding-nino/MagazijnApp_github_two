@@ -16,6 +16,9 @@ namespace MagazijnApp.Models
         [System.ComponentModel.DataAnnotations.MaxLength(128)]
         public string Salt { get; set; } = string.Empty;
 
+        [Required]
+        public string Role { get; set; } = "regular"; // Default role
+
     }
 }
 

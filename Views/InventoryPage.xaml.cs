@@ -2,17 +2,19 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using MagazijnApp.Models;
 using MagazijnApp.Services;
-
 namespace MagazijnApp.Views;
+
 
 public partial class InventoryPage : ContentPage
 {
-    DatabaseService _databaseService; // Database service for saving products
+    // DatabaseService _databaseService; // Database service for saving products
+    // Moved to MauiProgram.cs to prevent creating multiple instances
+    DatabaseService _databaseService;
 
-    public InventoryPage()
+    public InventoryPage(DatabaseService dbService)
     {
         InitializeComponent();
-        _databaseService = new DatabaseService(); // Initialize database service
+        _databaseService = dbService; // Initialize database service
     }
 
     private async void OnAddProductClicked(object sender, EventArgs e)

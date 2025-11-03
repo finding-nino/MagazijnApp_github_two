@@ -8,10 +8,10 @@ public partial class ProductsPage : ContentPage
     int count = 0;
     DatabaseService _databaseService;
 
-    public ProductsPage()
+    public ProductsPage(DatabaseService dbService)
     {
         InitializeComponent();
-        _databaseService = new DatabaseService();
+        _databaseService = dbService;
     }
 
 

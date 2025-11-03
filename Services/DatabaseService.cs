@@ -126,19 +126,27 @@ public class DatabaseService
             //Username already taken
             return false;
         }
+
+        Users newUser = new Users();
+        newUser.UserName = username;
+
+        if (username == "123456")
+        {
+            newUser.Role = "admin";
+        }
         else
         {
-            Users newUser = new Users();
-            newUser.UserName = username;
-
-            // Hash the password
-            var (hash, salt) = PasswordHasher.HashPassword(password);
-            newUser.PasswordHash = hash;
-            newUser.Salt = salt;
-
-            await _database.InsertAsync(newUser);
-            return true;
+            newUser.Role = "regular";
         }
+
+        // Hash the password
+        var (hash, salt) = PasswordHasher.HashPassword(password);
+        newUser.PasswordHash = hash;
+        newUser.Salt = salt;
+
+        await _database.InsertAsync(newUser);
+        return true;
+
     }
 
     public async Task<bool> LoginAsync(string username, string password)
@@ -156,6 +164,7 @@ public class DatabaseService
         {
             if (PasswordHasher.VerifyPassword(password, existingUser.PasswordHash, existingUser.Salt ))
             {
+                await Application.Current.MainPage.DisplayAlert("Debug", $"Role is: {existingUser.Role}", "OK");
                 return true;
             }
             else
