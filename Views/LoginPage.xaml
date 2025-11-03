@@ -27,6 +27,7 @@
             </Entry>
 
             <Entry
+                IsPassword="True"
                 x:Name="PasswordEntry"
                 Placeholder="Password"
                 PlaceholderColor="White"

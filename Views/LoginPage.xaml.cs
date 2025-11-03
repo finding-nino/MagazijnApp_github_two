@@ -8,11 +8,13 @@ public partial class LoginPage : ContentPage
 {
     int count = 0;
     DatabaseService _databaseService;
+    UserSession _userSession;
 
-    public LoginPage()
+    public LoginPage(DatabaseService dbService, UserSession userSession)
     {
         InitializeComponent();
-        _databaseService = new DatabaseService();
+        _databaseService = dbService;
+        _userSession = userSession;
 
     }
 
@@ -24,7 +26,18 @@ public partial class LoginPage : ContentPage
 
         if (succes)
         {
-            await DisplayAlert("Succes", "Logged in succesfully", "OK");
+            _userSession.CurrentUsername = username;
+            if (username == "123456")
+            {
+                _userSession.CurrentRole = "admin";
+            }
+            else
+            {
+                _userSession.CurrentRole = "regular";
+            }
+
+
+            await DisplayAlert("Succes", $"Logged in succesfully, your role is {_userSession.CurrentRole}", "OK");
             await Shell.Current.GoToAsync("main");
         }
         else
