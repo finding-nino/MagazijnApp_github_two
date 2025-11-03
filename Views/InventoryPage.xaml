@@ -4,9 +4,17 @@
              x:Class="MagazijnApp.Views.InventoryPage">
 
     <ScrollView>
-        <VerticalStackLayout BackgroundColor="#004A4F" 
-        ><!-- Padding="20" Margin="20" -->
-
+        <VerticalStackLayout BackgroundColor="#004A4F" >
+            <!-- Padding="20" Margin="20" -->
+            <Image Source="add_product.png"
+               HeightRequest="250"
+               WidthRequest="250"
+               Aspect="AspectFit"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Margin="0,20,0,10" />
+               
+            
             <Label
                 Text="Add Products"
                 Style="{StaticResource Headline}"
