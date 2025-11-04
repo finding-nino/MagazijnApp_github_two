@@ -1,12 +1,27 @@
 ﻿namespace MagazijnApp.Views;
+using MagazijnApp.Models;
+using MagazijnApp.Services;
 
 public partial class MainPage : ContentPage
 {
 	int count = 0;
+	DatabaseService _databaseService;
+	UserSession _userSession;
 
-	public MainPage()
+	public MainPage(DatabaseService Dbservice, UserSession userSession)
 	{
 		InitializeComponent();
+		_databaseService = Dbservice;
+		_userSession = userSession;
+
+		if (_userSession.IsAdmin)
+		{
+			InventoryBtn.IsVisible = true;
+		}
+		else
+		{
+			InventoryBtn.IsVisible = false;
+		}
 	}
 
 
@@ -16,13 +31,20 @@ public partial class MainPage : ContentPage
 	}
 	private async void OnProductsClicked(object? sender, EventArgs e)
 	{
-		// Navigate to ProductsPage to view all products
 		await Shell.Current.GoToAsync("products");
 	}
 	private async void OnLoginClicked(object? sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync("login");
 	}
+
+protected override void OnAppearing()
+    {
+		base.OnAppearing();
+		// Refresh UI based on current session state / AKA pressing back wont log you out anymore
+		InventoryBtn.IsVisible = _userSession.IsAdmin;
+    }
+
 
 
 }

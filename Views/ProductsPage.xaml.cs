@@ -7,11 +7,19 @@ public partial class ProductsPage : ContentPage
 {
     int count = 0;
     DatabaseService _databaseService;
+    UserSession _userSession;
 
-    public ProductsPage(DatabaseService dbService)
+    public ProductsPage(DatabaseService dbService, UserSession userSession)
     {
         InitializeComponent();
         _databaseService = dbService;
+        _userSession = userSession;
+
+        this.BindingContext = this;
+        // Makes the page itself the data source for bindings, without it the XAML bindings look at some unknwon data source AKA 
+        // {Binding UserSession.IsAdmin} has nowhere to look
+        // AKA Look for a UserSession property on this page
+
     }
 
 
@@ -105,5 +113,12 @@ public partial class ProductsPage : ContentPage
     }
     //Product loading put into a seperate method for reusability
     //Can call this from multiple areas
+
+    public UserSession UserSession => _userSession;
+    // Same as: public UserSession UserSession { get { return _userSession; } }
+    // Think of your page as a store: 
+    // _userSession = merch in the back room (private)
+    // UserSession property = putting merch on shelves (public)
+    // BindingContext = this = telling customers 'look at our shelves for products' 
 }
 

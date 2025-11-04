@@ -14,7 +14,8 @@ public partial class InventoryPage : ContentPage
     public InventoryPage(DatabaseService dbService)
     {
         InitializeComponent();
-        _databaseService = dbService; // Initialize database service
+        _databaseService = dbService;
+
     }
 
     private async void OnAddProductClicked(object sender, EventArgs e)
@@ -46,7 +47,7 @@ public partial class InventoryPage : ContentPage
                 $"Product created:\nName: {newProduct.ProductName}\nQuantity: {newProduct.Quantity}\nLocation: {newProduct.Location}", 
                 "OK");
             
-            // Optional: Clear form after successful save
+            
             ProductNameEntry.Text = string.Empty;
             QuantityEntry.Text = string.Empty;
             LocationEntry.Text = string.Empty;

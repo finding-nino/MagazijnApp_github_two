@@ -6,12 +6,12 @@
     xmlns:local="clr-namespace:MagazijnApp.Views"
     NavBarHasShadow="False"
     BackgroundColor="#c95843"
-    Title="MagazijnApp">
+    Title="Inventory Management">
 
 
         <Shell.TitleView>
     <Grid>
-        <Label Text="Magazijn App" 
+        <Label 
                HorizontalOptions="Center"
                VerticalOptions="Center"
                TextColor="White"

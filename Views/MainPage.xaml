@@ -22,9 +22,10 @@
             <Button
                 x:Name="InventoryBtn"
                 Text="Add Products"
+                FontSize="20"
                 TextColor="White"
-                WidthRequest="200"
-                HeightRequest="50"
+                WidthRequest="225"
+                HeightRequest="75"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                 BackgroundColor="#E46E56"
@@ -32,8 +33,10 @@
             <Button
                 x:Name="ProductsBtn"
                 Text="Go to Products"
+                FontSize="20"
                 TextColor="White"
-                WidthRequest="200"
+                WidthRequest="225"
+                HeightRequest="75"
                 BackgroundColor="#E46E56"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
@@ -41,9 +44,11 @@
             <Button
                 x:Name="LoginBtn"
                 Text="Go to Login"
-                TextColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200"
+                FontSize="20"
+                TextColor="White"
+                WidthRequest="225"
+                HeightRequest="75"
                 Clicked="OnLoginClicked"></Button>
 
 
