@@ -9,10 +9,10 @@
             Spacing="25">
             
             <Image
-                Source="inventory_management.png"
+                Source="magazijnmagazijn.png"
                 HeightRequest="185"
                 Aspect="AspectFit"
-                SemanticProperties.Description="inventory management image" />
+                 />
 
             <Label
                 Text="Welcome to your Inventory Management System"

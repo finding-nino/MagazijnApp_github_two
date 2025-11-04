@@ -4,13 +4,96 @@
              x:Class="MagazijnApp.Views.ProductsPage"
              x:Name="ProductPage">
     
+    <VerticalStackLayout BackgroundColor="#004A4F">
+        <!-- Image at the top, centered -->
+        <Image Source="inventory_management.png"
+               HeightRequest="300"
+               WidthRequest="300"
+               Aspect="AspectFit"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Margin="0,20,0,10" />
+               
+
+        <!-- Your existing CollectionView -->
+        <CollectionView x:Name="ProductsCollection" 
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                 <GridItemsLayout Orientation="Vertical" Span="3" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" HeightRequest="170">
+                        <Border BackgroundColor="#E46E56"
+                            Stroke="Transparent"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 20"
+                            Padding="10"
+                            VerticalOptions="Center">
+                                
+                            <Grid>
+                                <!-- Removed the image from here since it's now at the top -->
+                                <VerticalStackLayout Padding="5" BackgroundColor="#E46E56"
+                                    VerticalOptions="Center">
+                                    <Label Text="{Binding ProductName}" 
+                                           TextColor="White"
+                                           FontSize="16" 
+                                           FontAttributes="Bold" 
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           Margin="0,-5,0,0" />
+                                    <Label Text="{Binding Quantity}" 
+                                           TextColor="White"
+                                           FontSize="14" 
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Location}" 
+                                           TextColor="White"
+                                           FontSize="14" 
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center" />
+                                    <Grid ColumnDefinitions="*,*" 
+                                          ColumnSpacing="5"
+                                          VerticalOptions="End">
+                                        <Button Text="Edit"
+                                                TextColor="White"
+                                                BackgroundColor="#003B3F"
+                                                Clicked="OnEditClicked"
+                                                Grid.Column="0" />
+                                            
+                                        <Button Text="Delete"
+                                                TextColor="White"
+                                                BackgroundColor="#003B3F"
+                                                Clicked="OnDeleteClicked"
+                                                Grid.Column="1" />
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>       
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
+
+
+
+<!-- <?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagazijnApp.Views.ProductsPage">
+    
     <CollectionView x:Name="ProductsCollection" BackgroundColor="#004A4F">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="3" />
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
+                
                 <Grid Padding="10" HeightRequest="150">
+                                
+                            
                     <Border Stroke="{AppThemeBinding Light=Black, Dark=White}"
                             StrokeThickness="1"
                             StrokeShape="RoundRectangle 10"
@@ -21,7 +104,20 @@
                                     Opacity="0.2"
                                     Radius="10" />
                         </Border.Shadow>
+
+                        <Grid>
+                        
+                            <Image Source="magazijn.png"
+                                   HeightRequest="80"
+                                   Aspect="AspectFit"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Opacity="0.3" />
+                       
+                        
                         <VerticalStackLayout Padding="10" BackgroundColor="#E46E56">
+                           
+                            
                             <Label Text="{Binding ProductName}" 
                                    TextColor="White"
                                    FontSize="16" 
@@ -52,10 +148,12 @@
                                         Clicked="OnDeleteClicked"
                                         Grid.Column="1" />
                             </Grid>
+                          
                         </VerticalStackLayout>
-                    </Border>
+                    </Grid>
+                    </Border>       
                 </Grid>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
-</ContentPage>
+</ContentPage> -->
