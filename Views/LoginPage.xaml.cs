@@ -46,7 +46,7 @@ public partial class LoginPage : ContentPage
         }
 
     }
-    
+
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
         string username = UserNameEntry.Text;
@@ -63,4 +63,28 @@ public partial class LoginPage : ContentPage
         }
 
     }
+
+    private void OnEntryTextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Controleer of beide velden zijn ingevuld
+        bool areFieldsFilled = !string.IsNullOrWhiteSpace(UserNameEntry.Text) &&
+                              !string.IsNullOrWhiteSpace(PasswordEntry.Text);
+
+        // Zet beide knoppen enabled/disabled
+        LoginButton.IsEnabled = areFieldsFilled;
+        RegisterButton.IsEnabled = areFieldsFilled;
+
+        UpdateButtonColors(areFieldsFilled);
+
+    }
+
+    private void UpdateButtonColors(bool areFieldsFilled)
+{
+    Color enabledColor = Color.FromArgb("#E46E56");
+    Color disabledColor = Color.FromArgb("#666666");
+    
+    LoginButton.BackgroundColor = areFieldsFilled ? enabledColor : disabledColor;
+    RegisterButton.BackgroundColor = areFieldsFilled ? enabledColor : disabledColor;
+}
+    
 }

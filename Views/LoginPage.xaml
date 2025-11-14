@@ -23,7 +23,8 @@
                 Placeholder="Username"
                 PlaceholderColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200">
+                WidthRequest="200"
+                TextChanged="OnEntryTextChanged">
             </Entry>
 
             <Entry
@@ -32,7 +33,8 @@
                 Placeholder="Password"
                 PlaceholderColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200">
+                WidthRequest="200"
+                TextChanged="OnEntryTextChanged">
             </Entry>
 
             <Button
