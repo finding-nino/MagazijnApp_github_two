@@ -44,7 +44,7 @@ public partial class MainPage : ContentPage
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
-		RefreshUI(); // One method to refresh UI to make sure Add Products shows when logged in as admin and disappears when logging out
+		RefreshUI(); 
 		
 		InventoryBtn.IsVisible = _userSession.IsAdmin;
 	}
@@ -57,8 +57,8 @@ public partial class MainPage : ContentPage
 		{
 			_userSession.LogOut();
 			await DisplayAlert("Success", "Logged out successfully", "OK");
-			RefreshUI(); // Refresh UI immediatly
-			await Shell.Current.GoToAsync("//login"); // '//' means absolute navigation
+			RefreshUI();
+			await Shell.Current.GoToAsync("//login"); // '//' absolute navigation
 		}
 	}
 
