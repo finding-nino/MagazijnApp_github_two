@@ -13,11 +13,8 @@ public class DatabaseService
     {
         try
         {
-            // Use a simple relative path that works across platforms
+           
             string dbPath = Path.Combine(FileSystem.AppDataDirectory, "products.db3");
-
-            Console.WriteLine($"Database path: {dbPath}");
-            Console.WriteLine($"Directory exists: {Directory.Exists(Path.GetDirectoryName(dbPath))}");
 
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Products>().Wait();
@@ -28,33 +25,9 @@ public class DatabaseService
         catch (Exception ex)
         {
             Console.WriteLine($"Database initialization failed: {ex.Message}");
-            throw; // Re-throw to see the error
+            throw; 
         }
     }
-
-    //Database didn't work and inventory page was unable to open with code below, debug and output console were empty?
-    //to- do : fix this
-
-    // string dbPath = "Database/products.db3";
-    // Console.WriteLine($"Database path: {dbPath}");
-    // Console.WriteLine($"Full path: {Path.GetFullPath(dbPath)}");
-    // _database = new SQLiteAsyncConnection(dbPath);
-
-
-
-    // _database = new SQLiteAsyncConnection("Database/products.db3");
-
-    // Method below saved it to an appdata location, changed it to Database folder in project for easy access
-    // _database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "products.db3"));
-
-    // FileSystem is a MAUI helper which gives you the proper folder for app data on any platform
-    // Path.Combine gives you.a full path like C:/Users/You/AppData/your.app/products.db3
-    // Creates a connection to a SQLite database file called products.db3 in the safe platform-specific app data directory
-
-
-    // _database.CreateTableAsync<Products>().Wait();
-
-    // This tells SQlite create a table that matches my Products class, the Wait() makes sure the table is created before you try to use it
 
 
 
@@ -164,7 +137,6 @@ public class DatabaseService
         {
             if (PasswordHasher.VerifyPassword(password, existingUser.PasswordHash, existingUser.Salt ))
             {
-                await Application.Current.MainPage.DisplayAlert("Debug", $"Role is: {existingUser.Role}", "OK");
                 return true;
             }
             else
@@ -176,3 +148,29 @@ public class DatabaseService
 }
 
 //https://chat.deepseek.com/a/chat/s/76276e8e-9091-41b5-a307-7eae89b8f8ba
+
+
+    //Database didn't work and inventory page was unable to open with code below, debug and output console were empty?
+    //to- do : fix this
+
+    // string dbPath = "Database/products.db3";
+    // Console.WriteLine($"Database path: {dbPath}");
+    // Console.WriteLine($"Full path: {Path.GetFullPath(dbPath)}");
+    // _database = new SQLiteAsyncConnection(dbPath);
+
+
+
+    // _database = new SQLiteAsyncConnection("Database/products.db3");
+
+    // Method below saved it to an appdata location, changed it to Database folder in project for easy access
+    // _database = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "products.db3"));
+
+    // FileSystem is a MAUI helper which gives you the proper folder for app data on any platform
+    // Path.Combine gives you.a full path like C:/Users/You/AppData/your.app/products.db3
+    // Creates a connection to a SQLite database file called products.db3 in the safe platform-specific app data directory
+
+
+    // _database.CreateTableAsync<Products>().Wait();
+
+    // This tells SQlite create a table that matches my Products class, the Wait() makes sure the table is created before you try to use it
+

@@ -25,19 +25,22 @@
                 Placeholder="Product Name"
                 PlaceholderColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200"></Entry>
+                WidthRequest="225"
+                HeightRequest="75"></Entry>
 
             <Entry x:Name="QuantityEntry"
                 Placeholder="Quantity"
                 PlaceholderColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200"></Entry>
+                WidthRequest="225"
+                HeightRequest="75"></Entry>
 
             <Entry x:Name="LocationEntry"
                 Placeholder="Location"
                 PlaceholderColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200">
+                WidthRequest="225"
+                HeightRequest="75">
                 </Entry>
 
             <Button
@@ -46,14 +49,16 @@
                 TextColor="White"
                 BackgroundColor="#E46E56"
                 Margin="25"
-                WidthRequest="200"
+                WidthRequest="225"
+                HeightRequest="75"
                 Clicked="OnAddProductClicked"></Button>
             <Button
                 x:Name="ProductsBtn"
                 Text="Go to Products"
                 TextColor="White"
                 BackgroundColor="#E46E56"
-                WidthRequest="200"
+                WidthRequest="225"
+                HeightRequest="75"
                 Clicked="OnProductsClicked"></Button>
         </VerticalStackLayout>
     </ScrollView>

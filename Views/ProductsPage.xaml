@@ -5,7 +5,6 @@
              x:Name="ProductPage">
     
     <VerticalStackLayout BackgroundColor="#004A4F">
-        <!-- Image at the top, centered -->
         <Image Source="inventory_management.png"
                HeightRequest="300"
                WidthRequest="300"
@@ -15,7 +14,7 @@
                Margin="0,20,0,10" />
                
 
-        <!-- Your existing CollectionView -->
+        
         <CollectionView x:Name="ProductsCollection" 
             VerticalOptions="FillAndExpand">
             <CollectionView.ItemsLayout>
@@ -32,7 +31,6 @@
                             VerticalOptions="Center">
                                 
                             <Grid>
-                                <!-- Removed the image from here since it's now at the top -->
                                 <VerticalStackLayout Padding="5" BackgroundColor="#E46E56"
                                     VerticalOptions="Center">
                                     <Label Text="{Binding ProductName}" 
@@ -56,12 +54,14 @@
                                           ColumnSpacing="5"
                                           VerticalOptions="End">
                                         <Button Text="Edit"
+                                                IsVisible="{Binding Source={x:Reference ProductPage}, Path=BindingContext.UserSession.IsAdmin}"
                                                 TextColor="White"
                                                 BackgroundColor="#003B3F"
                                                 Clicked="OnEditClicked"
                                                 Grid.Column="0" />
                                             
                                         <Button Text="Delete"
+                                                IsVisible="{Binding Source={x:Reference ProductPage}, Path=BindingContext.UserSession.IsAdmin}"
                                                 TextColor="White"
                                                 BackgroundColor="#003B3F"
                                                 Clicked="OnDeleteClicked"

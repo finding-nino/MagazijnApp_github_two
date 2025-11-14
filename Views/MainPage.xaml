@@ -42,8 +42,8 @@
                 HorizontalOptions="Center"
                 Clicked="OnProductsClicked"></Button>
             <Button
-                x:Name="LoginBtn"
-                Text="Go to Login"
+                x:Name="LoginLogoutBtn"
+                Text="Login"
                 BackgroundColor="#E46E56"
                 FontSize="20"
                 TextColor="White"
