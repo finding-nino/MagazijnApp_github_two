@@ -72,15 +72,15 @@ public partial class MainPage : ContentPage
 		{
 			// No one logged in - show Login button
 			LoginLogoutBtn.Text = "Login";
-			LoginLogoutBtn.Clicked -= OnLogOutClicked; //Remove logout handler
-			LoginLogoutBtn.Clicked += OnLoginClicked; // Add login handler
+			LoginLogoutBtn.Clicked -= OnLogOutClicked;
+			LoginLogoutBtn.Clicked += OnLoginClicked;
 		}
 		else
 		{
 			// Someone logged in - show Logout 
 			LoginLogoutBtn.Text = "Logout";
-			LoginLogoutBtn.Clicked -= OnLoginClicked; // Remove login
-			LoginLogoutBtn.Clicked += OnLogOutClicked; // Add logout
+			LoginLogoutBtn.Clicked -= OnLoginClicked; 
+			LoginLogoutBtn.Clicked += OnLogOutClicked; 
 		}
 	}
 
@@ -90,7 +90,7 @@ public partial class MainPage : ContentPage
 
 		bool IsAdmin = _userSession.IsAdmin;
 		InventoryBtn.IsVisible = _userSession.IsAdmin;
-		// Refresh UI based on current session state / AKA pressing back wont log you out anymore
+		// Refresh UI based on current session state / and pressing back wont log you out anymore
 		
     }
 }
